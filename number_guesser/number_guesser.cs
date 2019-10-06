@@ -32,5 +32,6 @@ public class NumberGuesser
         }
         int score = 1000 / attempts;
         Console.WriteLine("Score {0} ", score);
+        Console.ReadKey();
     }
 }
