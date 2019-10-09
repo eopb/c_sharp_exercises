@@ -1,6 +1,6 @@
 using System;
 
-public class NumberGuesser
+public class Operations
 {
     public static void Main(string[] args)
     {
