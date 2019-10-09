@@ -24,6 +24,16 @@ public class Operations
         Console.WriteLine(
             "Also your string \"" + your_string + "\" is cool. It is " + your_string.Length + " digits long."
         );
+        Console.Write("Please input an double: ");
+        decimal input_float;
+        while (true)
+        {
+            try { input_float = Decimal.Parse(Console.ReadLine()); break; }
+            catch { Console.WriteLine("Unable to parse input. Please try again."); }
+        }
+        Console.WriteLine("Your number truncated: " + Decimal.Truncate(input_float));
+        Console.WriteLine("Your number to 2dp: " + Math.Round(input_float, 3));
+
 
     }
 }
