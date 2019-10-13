@@ -4,7 +4,7 @@ public class Array
 {
     public static void Main(string[] args)
     {
-        char[] arrayTest = new char[7];
+        var arrayTest = new char[7];
         arrayTest[0] = 'E';
         arrayTest[1] = 'C';
         arrayTest[2] = 'F';
