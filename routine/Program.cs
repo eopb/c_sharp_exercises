@@ -6,8 +6,13 @@ namespace routine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please input an number.");
-            int input = Int32.Parse(Console.ReadLine());
+            int input;
+            while (true)
+            {
+                Console.Write("Please input an number: ");
+                try { input = Int32.Parse(Console.ReadLine()); break; }
+                catch { Console.WriteLine("Unable to parse input. Please try again."); continue; }
+            }
             Console.WriteLine(
                 "The number is equal to 5: {0}\nThe number is a multiple of 7 or 3: {1}",
                 equal(input, 5),
