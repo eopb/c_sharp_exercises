@@ -8,16 +8,16 @@ namespace divide_by_zero_exception
         static void Main(string[] args)
         {
             Random rnd = new Random();
-
             int rndNumber = rnd.Next(0, 11);
+            Console.Write($"100 / {rndNumber}");
             try
             {
                 double ans = 100 / rndNumber;
-                Console.WriteLine($"100 / {rndNumber} = {ans}");
+                Console.WriteLine($" = {ans}");
             }
             catch (DivideByZeroException)
             {
-                Console.WriteLine($"100 / {rndNumber} Can't be done!");
+                Console.WriteLine(" Can't be done!");
             }
             Thread.Sleep(100);
             Main(args);
