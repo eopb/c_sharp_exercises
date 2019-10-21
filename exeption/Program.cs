@@ -13,7 +13,7 @@ namespace Routine_Function
             while (true)
             {
                 //Hold user input
-                int input;
+                int input = 0;
                 //Display options
                 //Get user input 
                 do
@@ -40,18 +40,18 @@ namespace Routine_Function
                 }
             }
         }
-        public int MathFunc()
+        static public int MathFunc()
         {
             Console.WriteLine("Welcome to 1. Mathermatics fun");
             return 5;
         }
-        public string StringFunc()
+        static public string StringFunc()
         {
             Console.WriteLine("Welcome to 2. String fun");
             return "String";
 
         }
-        public void ExceptionFunc() { Console.WriteLine("Welcome to 3. Exception fun"); }
+        static public void ExceptionFunc() { Console.WriteLine("Welcome to 3. Exception fun"); }
     }
 }
 
