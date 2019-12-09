@@ -2,6 +2,37 @@
 
 namespace bubble_sort
 {
+    class SpecBubble
+    {
+        int[] a;
+        public SpecBubble(int[] a)
+        {
+            this.a = a;
+        }
+        public static void ascending(int[] a) => Bubble.ascending(a);
+    }
+    static class Bubble
+    {
+        public static void ascending(int[] a) => sort(a, (i, j) => i > j);
+        public static void descending(int[] a) => sort(a, (i, j) => i < j);
+        public static void sort<T>(T[] a, Func<T, T, bool> sortedf)
+        {
+            bool sorted = false;
+            while (!sorted)
+            {
+                sorted = true;
+                for (int i = 0; i < a.Length - 1; i++)
+                {
+                    int j = i + 1;
+                    if (sortedf(a[i], a[j]))
+                    {
+                        T t = a[j]; a[j] = a[i]; a[i] = t;
+                        sorted = false;
+                    }
+                }
+            }
+        }
+    }
     class Program
     {
         public static void print_array(int[] a)
@@ -25,21 +56,8 @@ namespace bubble_sort
         {
             Random rnd = new Random();
             int[] a = gen_random();
-            bool sorted = false;
-            while (!sorted)
-            {
-                sorted = true;
-                for (int i = 0; i < a.Length - 1; i++)
-                {
-                    int j = i + 1;
-                    if (a[i] < a[j])
-                    {
-                        int t = a[j]; a[j] = a[i]; a[i] = t;
-                        sorted = false;
-                    }
-                    print_array(a);
-                }
-            }
+            Bubble.descending(a);
+            print_array(a);
         }
     }
 }
