@@ -31,10 +31,8 @@ namespace merge_sort
         {
             Random rnd = new Random();
             int[] a = new int[200];
-            for (int i = 0; i < a.Length - 1; i++)
-            {
+            for (int i = 0; i < a.Length ; i++)
                 a[i] = rnd.Next(1, 101);
-            }
             return a;
         }
         public static void Main(string[] args)
