@@ -25,22 +25,21 @@ namespace merge_sort
         public static void print_array(int[] l)
         {
             Console.Write("\n");
-            foreach (int i in l)
+            foreach (var i in l)
                 Console.Write($"{i},");
             Console.Write("\n");
         }
         public static int[] gen_random()
         {
             Random rnd = new Random();
-            int[] a = new int[200];
+            var a = new int[200];
             for (int i = 0; i < a.Length ; i++)
                 a[i] = rnd.Next(1, 101);
             return a;
         }
         public static void Main(string[] args)
         {
-            Random rnd = new Random();
-            List<int> a = Merge.descending(gen_random().ToList());
+            var a = Merge.descending(gen_random().ToList());
             print_array(a.ToArray());
         }
     }
