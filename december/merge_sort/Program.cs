@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace merge_sort
 {
-    static class Bubble
+    static class Merge
     {
         public static List<int> ascending(List<int> a) => s(a, (i, j) => i > j);
         public static List<int> descending(List<int> a) => s(a, (i, j) => i < j);
@@ -42,7 +42,7 @@ namespace merge_sort
         public static void Main(string[] args)
         {
             Random rnd = new Random();
-            List<int> a = Bubble.descending(gen_random().ToList());
+            List<int> a = Merge.descending(gen_random().ToList());
             print_array(a.ToArray());
         }
     }
