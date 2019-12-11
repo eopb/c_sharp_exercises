@@ -14,10 +14,8 @@ namespace merge_sort
             {
                 List<T> mo = new List<T>();
                 while (m1.Count > 0 && m2.Count > 0)
-                {
                     if (f(m1[0], m2[0])) { mo.Add(m2[0]); m2.RemoveAt(0); }
                     else { mo.Add(m1[0]); m1.RemoveAt(0); }
-                }
                 return mo.Concat(m1).Concat(m2).ToList();
             };
             int n = l.Count;
