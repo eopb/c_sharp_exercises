@@ -11,7 +11,7 @@ namespace merge_sort
         public static List<T> s<T>(List<T> l, Func<T, T, bool> f) {
             Func<List<T>, List<T>, List<T>> m = (m1, m2) => {
                 var mo = new List<T>();
-                while (m1.Count > 0 && m2.Count > 0)
+                while (m1.Count * m2.Count != 0)
                     if (f(m1[0], m2[0])) { mo.Add(m2[0]); m2.RemoveAt(0); }
                     else                 { mo.Add(m1[0]); m1.RemoveAt(0); }
                 return mo.Concat(m1).Concat(m2).ToList(); };
