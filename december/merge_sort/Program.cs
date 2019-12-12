@@ -18,7 +18,7 @@ namespace merge_sort
                     else                 { mo.Add(m1[0]); m1.RemoveAt(0); }
                 return mo.Concat(m1).Concat(m2).ToList(); };
             int n = l.Count;
-            return n <= 1 ? l : m(s(l.Take(n / 2).ToList(), f), s(l.Skip(n / 2).ToList(), f)); }
+            return n < 2 ? l : m(s(l.Take(n / 2).ToList(), f), s(l.Skip(n / 2).ToList(), f)); }
     }
     class Program
     {
