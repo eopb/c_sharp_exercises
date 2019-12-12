@@ -6,7 +6,7 @@ namespace merge_sort
 {
     static class Merge
     {
-        public static List<T>  ascending<T>(List<T> a) where T : IComparable =>
+        public static List<T> ascending <T>(List<T> a) where T : IComparable =>
             s(a, (i, j) => i.CompareTo(j) > 0);
         public static List<T> descending<T>(List<T> a) where T : IComparable =>
             s(a, (i, j) => i.CompareTo(j) < 0);
