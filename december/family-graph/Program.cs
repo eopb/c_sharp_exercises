@@ -7,25 +7,17 @@ namespace family_graph
     class Graph
     {
         string[] names;
-        bool[][] relationships;
+        double[][] relationships;
         public Graph(string path)
         {
             var output = File.ReadAllLines(path);
             names = output[0].Split(',');
             relationships = output
                 .Skip(1)
-                .Select(i => i.Split(',').Select(j => Int32.Parse(j) != 0).ToArray()).ToArray();
+                .Select(i => i.Split(',').Select(j => Double.Parse(j)).ToArray()).ToArray();
         }
-        public void print()
-        {
-            foreach (string name in names) System.Console.Write($"{name},");
-            System.Console.WriteLine();
-            foreach (bool[] i in relationships)
-            {
-                foreach (bool j in i) System.Console.Write($"{j}, ");
-                System.Console.WriteLine();
-            };
-        }
+        public string print() =>
+            $"{string.Join(",", names)}\n{string.Join("\n", relationships.Select(j => string.Join(",", j)))}";
 
     }
     class Program
@@ -34,7 +26,11 @@ namespace family_graph
         {
             string path = "/home/efun/Documents/git/ethanboxx/github/csharp/c_sharp_exercises/december/family-graph/data.csv";
             Graph graph = new Graph(path);
-            graph.print();
+            System.Console.WriteLine(graph.print());
+            File.WriteAllText(
+                "/home/efun/Documents/git/ethanboxx/github/csharp/c_sharp_exercises/december/family-graph/dataout.csv",
+                graph.print()
+            );
             // foreach (string line in output) System.Console.WriteLine(line);
         }
     }
